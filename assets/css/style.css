@@ -603,6 +603,8 @@ header img{
     background-color: var(--cont);
 
     border-radius: 12px;
+
+    box-shadow: 0 0 20px 0px #000;
 }
 
 #sctProjetos .dvPri .dvSub .dvImgSite{
@@ -622,10 +624,14 @@ header img{
 }
 
 #sctProjetos .dvPri .dvSub:nth-child(1) .dvImgSite{
-    background-image: url("../images/media/starbucks.png");
+    background-image: url("../images/media/portfolio.png");
 }
 
 #sctProjetos .dvPri .dvSub:nth-child(2) .dvImgSite{
+    background-image: url("../images/media/starbucks.png");
+}
+
+#sctProjetos .dvPri .dvSub:nth-child(3) .dvImgSite{
     background-image: url("../images/media/renanDelbue.png");
 }
 
