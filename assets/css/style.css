@@ -1,0 +1,890 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --prin: #071e22;
+    --secun: #1FFFF4;
+    --cont: #0a2d33;
+    --text: #FFF;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+html::-webkit-scrollbar{
+    display: none;
+}
+
+body::-webkit-scrollbar{
+    width: 10px;
+
+    background-color: var(--prin);
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: var(--secun);
+}
+
+@keyframes bordas{
+    0%{
+        box-shadow: inset 0 0 20px 5px var(--secun), 0 0 20px 5px var(--secun);
+        
+    }
+
+    50%{
+        box-shadow: inset 0 0 40px 10px var(--secun), 0 0 40px 10px var(--secun);
+        
+    }
+
+    100%{
+        box-shadow: inset 0 0 20px 5px var(--secun), 0 0 20px 5px var(--secun);
+    }
+}
+
+@keyframes piscaPisca{
+    0%{
+        box-shadow: 0px 0px 40px 5px var(--secun);
+    }
+
+    50%{
+        box-shadow: 0px 0px 20px 2px var(--secun);
+    }
+
+    100%{
+        box-shadow: 0px 0px 40px 5px var(--secun);
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+
+    border: none;
+    box-sizing: border-box;
+
+    font-family: 'Montserrat', sans-serif;
+
+    z-index: 1;
+}
+
+a{
+    color: var(--text);
+    text-decoration: none;
+}
+
+h1{
+    color: var(--text);
+    font-size: 4rem;
+
+    text-align: center;
+    line-height: 8rem;
+
+    padding-bottom: 60px;
+}
+
+h1::after,
+h1::before{
+    content: "";
+
+    display: block;
+
+    height: 5px;    
+
+    background-color: var(--secun);
+
+    border-radius: 3px;
+
+    margin-inline: auto;
+
+    box-shadow: 0px 0px 15px 2px var(--secun);
+}
+
+h1::before{
+    width: 800px;
+}
+
+h1::after{
+    width: 200px;
+}
+
+body{
+    background-color: var(--prin);
+}
+
+section{
+    height: fit-content;
+
+    background-color: var(--prin);
+
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.dvContainer{
+    width: 1140px;
+
+    margin-inline: auto;
+}
+
+header{
+    display: flex;
+
+    height: 100px;
+
+    background-color: var(--prin);
+
+    align-items: center;
+    justify-content: center;
+}
+
+header img{
+    height: 80%;
+}
+
+#sctBanner{
+    height: calc(100vh - 100px);
+
+    background-color: var(--prin);
+
+    box-shadow: inset 0 0 0px 0px var(--secun), 0 0 20px 5px var(--secun);
+
+    animation-name: bordas;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+    margin-bottom: 60px;
+}
+
+#sctBanner .dvContainer{
+    display: flex;
+
+    height: 100%;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#sctBanner p{
+    height: fit-content;
+    width: 100%;
+
+    color: var(--text);
+    font-size: 8rem;
+    font-weight: 600;
+
+    text-align: center;
+    line-height: 12rem;
+}
+
+#sctBanner p span{
+    color: var(--secun);
+}
+
+#sctQuemSou .dvContainer{
+    flex-direction: column;
+}
+
+#sctQuemSou .dvSeg{
+    display: flex;
+}
+
+#sctQuemSou .dvSeg .dvSub{
+    display: flex;
+
+    flex-direction: column;
+}
+
+#sctQuemSou .dvSeg .dvSub:first-child{
+    flex: 1;
+    display: flex;
+
+    align-items: start;
+    justify-content: center;
+}
+
+#sctQuemSou .dvSeg .dvSub:first-child div{
+    height: 300px;
+    width: 300px;
+
+    background-image: url('../images/client/perfil.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 50%;
+
+    box-shadow: 0px 0px 20px -2px var(--secun);
+
+    animation-name: piscaPisca;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#sctQuemSou .dvSeg .dvSub:first-child h2{
+    color: var(--text);
+    font-size: 3rem;
+    font-weight: 500;
+
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+#sctQuemSou .dvSeg .dvSub:first-child h3{
+    color: var(--text);
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+#sctQuemSou .dvSeg .dvSub:last-child{
+    flex: 2;
+}
+
+#sctQuemSou .dvFundo{
+    display: grid;
+
+    height: 100%;
+    width: 100%;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: min-content;
+    grid-gap: 10px;
+    grid-template-areas:
+        "desc lang"
+        "textos textos";
+}
+
+#sctQuemSou .dvFundo .dvCard{
+    background-color: var(--cont);
+
+    border-radius: 12px;
+
+    padding: 20px;
+}
+
+#sctQuemSou .dvFundo .dvCard:nth-child(1){
+    grid-area: desc;
+}
+
+#sctQuemSou .dvFundo .dvCard:nth-child(2){
+    grid-area: lang;
+}
+
+#sctQuemSou .dvFundo .dvCard:nth-child(3){
+    grid-area: textos;
+}
+
+#sctQuemSou .dvFundo .dvCard ul{
+    display: flex;
+
+    height: 100%;
+    width: 100%;
+    
+    flex-direction: column;
+    justify-content: center;
+}
+
+#sctQuemSou .dvFundo .dvCard ul li{
+    color: var(--text);
+    font-size: 1.6rem;
+
+    line-height: 2.5rem;
+    text-align: justify;
+
+    list-style-type: none;
+
+    margin-bottom: 5px;
+}
+
+#sctQuemSou .dvFundo .dvCard ul li span{
+    color: var(--secun);
+}
+
+#sctTraj .dvSeg{
+    display: grid;
+
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: min-content 5px min-content;
+    grid-gap: 40px 10px;
+    grid-template-areas: 
+        "traj1 traj1 vazio1 traj2 traj2 vazio2 traj3 traj3 vazio6"
+        "linha linha linha linha linha linha linha linha linha"
+        "vazio3 traj4 traj4 vazio4 traj5 traj5 vazio5 traj6 traj6";
+}
+
+#sctTraj .dvSeg .dvCard:nth-child(1){
+    grid-area: traj1;
+}
+
+#sctTraj .dvSeg .dvCard:nth-child(2){
+    grid-area: vazio1;
+}
+
+#sctTraj .dvSeg .dvCard:nth-child(3){
+    grid-area: traj2;
+}
+
+#sctTraj .dvSeg .dvCard:nth-child(4){
+    grid-area: vazio2;
+}
+
+#sctTraj .dvSeg .dvCard:nth-child(5){
+    grid-area: traj3;
+}
+
+#sctTraj .dvSeg .dvCard:nth-child(6){
+    grid-area: linha;
+}
+
+#sctTraj .dvSeg .dvCard:nth-child(7){
+    grid-area: vazio3;
+}
+
+#sctTraj .dvSeg .dvCard:nth-child(8){
+    grid-area: traj4;
+}
+
+#sctTraj .dvSeg .dvCard:nth-child(9){
+    grid-area: vazio4;
+}
+
+#sctTraj .dvSeg .dvCard:nth-child(10){
+    grid-area: traj5;
+}
+
+#sctTraj .dvSeg .dvCard:nth-child(11){
+    grid-area: vazio5;
+}
+
+#sctTraj .dvSeg .dvCard:nth-child(12){
+    grid-area: traj6;
+}
+
+#sctTraj .dvSeg .dvCard:nth-child(13){
+    grid-area: vazio6;
+}
+
+#sctTraj .dvSeg .dvCard{
+    background-color: var(--prin);
+}
+
+#sctTraj .dvSeg .dvConteu{
+    background-color: var(--cont);
+
+    color: var(--text);
+    font-size: 1.6rem;
+
+    padding: 15px;
+
+    border-radius: 7px;
+
+    position: relative;
+}
+
+#sctTraj .dvSeg .dvConteu span{
+    display: flex;
+
+    border-left: 5px solid var(--secun);
+
+    margin-top: 5px;
+
+    padding: 10px;
+
+    flex-direction: column;
+}
+
+#sctTraj .dvSeg .dvLinha{
+    display: flex;
+
+    background-color: var(--secun);
+
+    border-radius: 12px;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+#sctSkills .dvPri p{
+    color: var(--text);
+    font-size: 1.6rem;
+
+    text-align: justify;
+    text-indent: 2rem;
+}
+
+#sctSkills .dvSeg{
+    display: grid;
+
+    margin-top: 40px;
+
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+#sctSkills .dvSeg .dvCard{
+    background-color: var(--cont);
+
+    border-radius: 7px;
+
+    padding: 20px;
+}
+
+#sctSkills .dvSeg .dvCard:hover{
+    cursor: pointer;
+}
+
+#sctSkills .dvSeg .dvCard .dvTit{
+    display: flex;
+
+    color: var(--text);
+    font-size: 2.2rem;
+
+    position: relative;
+
+    flex-direction: column;
+    align-items: center;
+}
+
+#sctSkills .dvSeg .dvCard .dvTit img{
+    height: 80px;
+
+    margin-bottom: 10px;
+}
+
+#sctSkills .dvSeg .dvCard .dvTit .dvBolha{
+    display: flex;
+
+    height: 40px;
+    width: 40px;
+
+    border: 3px solid var(--secun);
+    border-radius: 50%;
+
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+
+    overflow: hidden;
+
+    align-items: end;
+}
+
+#sctSkills .dvSeg .dvCard .dvTit .dvBolha .dvLiqui{
+    width: 100%;
+
+    background-color: var(--secun);
+}
+
+#sctSkills .dvSeg .dvCard:nth-child(1) .dvTit .dvBolha .dvLiqui,
+#sctSkills .dvSeg .dvCard:nth-child(2) .dvTit .dvBolha .dvLiqui{
+    height: 80%;
+}
+
+#sctSkills .dvSeg .dvCard:nth-child(3) .dvTit .dvBolha .dvLiqui{
+    height: 30%;
+}
+
+#sctSkills .dvSeg .dvCard:nth-child(4) .dvTit .dvBolha .dvLiqui{
+    height: 70%;
+}
+
+#sctSkills .dvSeg .dvCard:nth-child(5) .dvTit .dvBolha .dvLiqui{
+    height: 30%;
+}
+
+#sctSkills .dvSeg .dvCard:nth-child(6) .dvTit .dvBolha .dvLiqui{
+    height: 60%;
+}
+
+#sctSkills .dvSeg .dvCard:nth-child(7) .dvTit .dvBolha .dvLiqui{
+    height: 10%;
+}
+
+#sctSkills .dvSeg .dvCard:nth-child(8) .dvTit .dvBolha .dvLiqui{
+    height: 80%;
+}
+
+#sctSkills .dvSeg .dvCard .dvSkills{
+    max-height: 0;
+
+    overflow: hidden;
+
+    transition: max-height 200ms ease-out;
+}
+
+#sctSkills .dvSeg .dvCard .dvSkills .dvEspaco{
+    height: 40px;
+}
+
+#sctSkills .dvSeg .dvCard .dvSkills div{
+    color: var(--text);
+    font-size: 1.6rem;
+
+    margin-left: 10px;
+
+    padding: 20px;
+}
+
+#sctContato{
+    padding: 0;
+}
+
+#sctContato .dvContainer{
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+#sctContato h2{
+    height: fit-content;
+    width: fit-content;
+
+    color: var(--text);
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#sctContato .dvSub{
+    display: flex;
+
+    height: fit-content;
+    width: fit-content;
+}
+
+#sctContato .dvSub img{
+    height: 50px;
+
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#sctContato .dvSub img:nth-child(5){
+    background-color: var(--text);
+
+    border-radius: 50%;
+}
+
+#sctContato .dvSub #dvFundoGmail{
+    display: flex;
+
+    height: 50px;
+    width: 50px;
+
+    background-color: var(--text);
+
+    border-radius: 50%;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#sctContato .dvSub #dvFundoGmail img{
+    height: 30px;
+
+    border-radius: none;
+}
+
+#sctProjetos .dvPri{
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 40px;
+}
+
+#sctProjetos .dvPri .dvSub{
+    height: 100%;
+    width: 100%;
+
+    background-color: var(--cont);
+
+    border-radius: 12px;
+}
+
+#sctProjetos .dvPri .dvSub .dvImgSite{
+    height: 200px;
+    width: 100%;
+
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+
+    overflow: hidden;
+}
+
+#sctProjetos .dvPri .dvSub .dvImgSite{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#sctProjetos .dvPri .dvSub:nth-child(1) .dvImgSite{
+    background-image: url("../images/media/starbucks.png");
+}
+
+#sctProjetos .dvPri .dvSub:nth-child(2) .dvImgSite{
+    background-image: url("../images/media/renanDelbue.png");
+}
+
+#sctProjetos .dvPri .dvSub h2{
+    color: var(--text);
+    font-size: 3rem;
+
+    text-align: center;
+
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+#sctProjetos .dvPri .dvSub .dvSeg{
+    display: flex;
+    
+    height: 60px;
+    width: 100%;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#sctProjetos .dvPri .dvSub .dvSeg img{
+    height: 40px;
+
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#sctProjetos .dvPri .dvSub button{
+    width: 100%;
+
+    background: rgba(0, 0, 0, 0.2);
+
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+    transition:
+        background 250ms linear,
+        box-shadow 250ms linear;
+}
+
+#sctProjetos .dvPri .dvSub button a{
+    display: flex;
+
+    height: 100%;
+    width: 100%;
+
+    color: var(--text);
+    font-size: 1.6rem;
+    font-weight: 600;
+
+    padding: 20px;
+
+    justify-content: center;
+    align-items: center;
+
+    transition:
+        color 250ms linear,
+        font-weight 250ms linear;
+}
+
+#sctProjetos #dvFundoGit{
+    display: flex;
+
+    height: 60px;
+    width: 200px;
+
+    background-color: #000;
+
+    border-radius: 40px;
+
+    margin-inline: auto;
+    margin-top: 40px;
+}
+
+#sctProjetos #dvFundoGit a{
+    display: flex;
+
+    height: 100%;
+    width: 100%;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#sctProjetos #dvFundoGit img{
+    height: 40px;
+
+    filter: invert(100%);
+
+    border-radius: none;
+}
+
+footer{
+    display: flex;
+
+    background-color: var(--cont);
+
+    color: var(--text);
+    font-size: 1.4rem;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer span{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+footer span:first-child{
+    color: var(--secun);
+}
+
+@media(max-width:1200px){
+    .dvContainer{
+        width: 700px;
+    }
+
+    #sctQuemSou .dvSeg{
+        flex-direction: column;
+    }
+
+    #sctQuemSou .dvSeg .dvSub:first-child{
+        align-items: center;
+        
+        margin-bottom: 40px;
+    }
+
+    h1::before{
+        width: 700px;
+    }
+
+    #sctTraj .dvSeg{
+        grid-template-columns: 10px 1fr 1fr;
+        grid-template-rows: auto;
+        grid-gap: 10px 20px;
+        grid-template-areas:
+        "linha traj1 traj4"
+        "linha traj2 traj5"
+        "linha traj3 traj6";
+    }
+
+    #sctTraj .dvSeg .dvCard:nth-child(2),
+    #sctTraj .dvSeg .dvCard:nth-child(4),
+    #sctTraj .dvSeg .dvCard:nth-child(7),
+    #sctTraj .dvSeg .dvCard:nth-child(9),
+    #sctTraj .dvSeg .dvCard:nth-child(11),
+    #sctTraj .dvSeg .dvCard:nth-child(13){
+        display: none;
+    }
+
+    #sctSkills .dvSeg{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #sctProjetos .dvPri{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width:720px){
+    .dvContainer{
+        width: 300px;
+
+        overflow: hidden;
+    }
+
+    section{
+        padding-top: 0;
+    }
+
+    #sctBanner p{
+        font-size: 4rem;
+
+        line-height: 6rem;
+    }
+
+    h1{
+        line-height: 6rem;
+    }
+
+    h1::before{
+        width: 260px;
+
+        margin-top: 20px;
+        margin-bottom: 20px; 
+    }
+
+    h1::after{
+        width: 140px;
+
+        margin-top: 20px;
+    }
+
+    #sctQuemSou .dvSeg .dvSub:first-child div{
+        height: 220px;
+        width: 220px;
+    }
+
+    #sctQuemSou .dvFundo{
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+        grid-template-areas: 
+            "desc"
+            "lang"
+            "textos";
+    }
+
+    #sctTraj .dvSeg{
+        grid-template-columns: 10px 1fr;
+        grid-gap: 20px;
+        grid-template-areas:
+        "linha traj1"
+        "linha traj4"
+        "linha traj2"
+        "linha traj5"
+        "linha traj3"
+        "linha traj6";
+    }
+
+    #sctSkills .dvSeg{
+        grid-template-columns: 1fr;
+    }
+
+    #sctContato .dvContainer{
+        padding-bottom: 40px;
+
+        flex-direction: column;
+    }
+
+    #sctContato h2{
+        margin-bottom: 20px;
+    }
+
+    #sctProjetos .dvPri{
+        grid-template-columns: 1fr;
+    }
+
+    #sctProjetos .dvPri .dvSub .dvImgSite{
+        height: 180px;
+    }
+
+    #sctProjetos .dvPri .dvSub button{
+        background-color: var(--secun) !important;
+        box-shadow: 0 0 20px 3px var(--secun) !important;
+    }
+
+    #sctProjetos .dvPri .dvSub button a{
+        color: var(--cont) !important;
+        font-weight: 800 !important;
+    }
+}
