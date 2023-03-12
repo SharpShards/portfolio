@@ -628,10 +628,14 @@ header img{
 }
 
 #sctProjetos .dvPri .dvSub:nth-child(2) .dvImgSite{
-    background-image: url("../images/media/starbucks.png");
+    background-image: url("../images/media/qrCode.png");
 }
 
 #sctProjetos .dvPri .dvSub:nth-child(3) .dvImgSite{
+    background-image: url("../images/media/starbucks.png");
+}
+
+#sctProjetos .dvPri .dvSub:nth-child(4) .dvImgSite{
     background-image: url("../images/media/renanDelbue.png");
 }
 
