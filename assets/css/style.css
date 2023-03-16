@@ -209,9 +209,9 @@ header img{
     height: 300px;
     width: 300px;
 
-    background-image: url('../images/client/perfil.png');
+    background-image: url('../images/client/perfil.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
 
     border-radius: 50%;
