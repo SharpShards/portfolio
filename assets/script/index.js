@@ -1,10 +1,17 @@
 function expandirSkill(){
     let sk = this.children[1];
+    let seta = this.children[0].children[0];
+
+    seta.style.transition = 'transform 250ms linear';
 
     if(sk.style.maxHeight){
         sk.style.maxHeight = null;
+
+        seta.style.transform = 'rotate(180deg)';
     }else{
         sk.style.maxHeight = sk.scrollHeight + "px";
+
+        seta.style.transform = 'rotate(0deg)';
     }
 }
 
@@ -36,3 +43,5 @@ for(let loop = 0; loop < button.length; loop++){
 }
 
 const a = document.querySelectorAll('#sctProjetos .dvPri .dvSub button a');
+
+const seta = document.querySelectorAll('.dvSeta');

@@ -454,6 +454,23 @@ header img{
     margin-bottom: 10px;
 }
 
+#sctSkills .dvSeg .dvCard .dvTit .dvSeta{
+    height: 30px;
+    width: 30px;
+
+    background-image: url("../images/icon/seta.png");
+    background-size: 40px;
+    background-position: center;
+
+    border-radius: 50%;
+
+    transform: rotate(180deg);
+
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+}
+
 #sctSkills .dvSeg .dvCard .dvTit .dvBolha{
     display: flex;
 
