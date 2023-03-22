@@ -653,6 +653,10 @@ header img{
 }
 
 #sctProjetos .dvPri .dvSub:nth-child(4) .dvImgSite{
+    background-image: url("../images/media/ballsFight.png");
+}
+
+#sctProjetos .dvPri .dvSub:nth-child(5) .dvImgSite{
     background-image: url("../images/media/renanDelbue.png");
 }
 
