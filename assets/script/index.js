@@ -7,11 +7,11 @@ function expandirSkill(){
     if(sk.style.maxHeight){
         sk.style.maxHeight = null;
 
-        seta.style.transform = 'rotate(180deg)';
+        seta.style.transform = 'rotate(0deg)';
     }else{
         sk.style.maxHeight = sk.scrollHeight + "px";
 
-        seta.style.transform = 'rotate(0deg)';
+        seta.style.transform = 'rotate(180deg)';
     }
 }
 

@@ -457,8 +457,6 @@ header p span{
 
     border-radius: 50%;
 
-    transform: rotate(180deg);
-
     position: absolute;
     bottom: -10px;
     left: -10px;
@@ -860,10 +858,14 @@ footer span:first-child{
         padding-top: 0;
     }
 
-    #sctBanner p{
-        font-size: 4rem;
+    header img{
+        margin-bottom: 60px;
+    }
 
-        line-height: 6rem;
+    header p{
+        font-size: 6rem;
+
+        line-height: 8rem;
     }
 
     h1{
@@ -932,12 +934,23 @@ footer span:first-child{
     }
 
     #sctProjetos .dvPri .dvSub button{
-        background-color: var(--secun) !important;
-        box-shadow: 0 0 20px 3px var(--secun) !important;
+        background-color: var(--prin) !important;
+        box-shadow: 0 0 20px 3px var(--prin) !important;
     }
 
-    #sctProjetos .dvPri .dvSub button a{
-        color: var(--cont) !important;
+    #sctProjetos .dvPri .dvSub button a{    
         font-weight: 800 !important;
+    }
+}
+
+@media(max-width:460px){
+    header img{
+        margin-bottom: 80px;
+    }
+
+    header p{
+        font-size: 4rem;
+
+        line-height: 6rem;
     }
 }
