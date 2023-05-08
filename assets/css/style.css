@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 :root{
-    --prin: #071e22;
-    --secun: #1FFFF4;
-    --cont: #0a2d33;
+    --prin: #730d0d;
+    --secun: #000;
+    --cont: #0a0a0a;
     --text: #FFF;
 }
 
@@ -18,40 +18,40 @@ html::-webkit-scrollbar{
 body::-webkit-scrollbar{
     width: 10px;
 
-    background-color: var(--prin);
+    background-color: var(--secun);
 }
 
 body::-webkit-scrollbar-thumb{
-    background-color: var(--secun);
+    background-color: var(--prin);
 }
 
 @keyframes bordas{
     0%{
-        box-shadow: inset 0 0 20px 5px var(--secun), 0 0 20px 5px var(--secun);
+        box-shadow: inset 0 0 20px 5px var(--prin), 0 0 20px 5px var(--prin);
         
     }
 
     50%{
-        box-shadow: inset 0 0 40px 10px var(--secun), 0 0 40px 10px var(--secun);
+        box-shadow: inset 0 0 40px 10px var(--prin), 0 0 40px 10px var(--prin);
         
     }
 
     100%{
-        box-shadow: inset 0 0 20px 5px var(--secun), 0 0 20px 5px var(--secun);
+        box-shadow: inset 0 0 20px 5px var(--prin), 0 0 20px 5px var(--prin);
     }
 }
 
 @keyframes piscaPisca{
     0%{
-        box-shadow: 0px 0px 40px 5px var(--secun);
+        box-shadow: 0px 0px 40px 5px var(--prin);
     }
 
     50%{
-        box-shadow: 0px 0px 20px 2px var(--secun);
+        box-shadow: 0px 0px 20px 2px var(--prin);
     }
 
     100%{
-        box-shadow: 0px 0px 40px 5px var(--secun);
+        box-shadow: 0px 0px 40px 5px var(--prin);
     }
 }
 
@@ -91,13 +91,13 @@ h1::before{
 
     height: 5px;    
 
-    background-color: var(--secun);
+    background-color: var(--prin);
 
     border-radius: 3px;
 
     margin-inline: auto;
 
-    box-shadow: 0px 0px 15px 2px var(--secun);
+    box-shadow: 0px 0px 15px 2px var(--prin);
 }
 
 h1::before{
@@ -109,13 +109,13 @@ h1::after{
 }
 
 body{
-    background-color: var(--prin);
+    background-color: var(--secun);
 }
 
 section{
     height: fit-content;
 
-    background-color: var(--prin);
+    background-color: var(--secun);
 
     padding-top: 60px;
     padding-bottom: 60px;
@@ -130,24 +130,12 @@ section{
 header{
     display: flex;
 
-    height: 100px;
+    height: 100vh;
+    width: 100%;
 
-    background-color: var(--prin);
+    background-color: var(--secun);
 
-    align-items: center;
-    justify-content: center;
-}
-
-header img{
-    height: 80%;
-}
-
-#sctBanner{
-    height: calc(100vh - 100px);
-
-    background-color: var(--prin);
-
-    box-shadow: inset 0 0 0px 0px var(--secun), 0 0 20px 5px var(--secun);
+    box-shadow: inset 0 0 0px 0px var(--prin), 0 0 20px 5px var(--secun);
 
     animation-name: bordas;
     animation-duration: 2s;
@@ -155,19 +143,20 @@ header img{
     animation-timing-function: ease-in-out;
 
     margin-bottom: 60px;
-}
 
-#sctBanner .dvContainer{
-    display: flex;
-
-    height: 100%;
+    padding: 40px;
 
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
-#sctBanner p{
+header img{
+    height: 140px;
+
+    margin-bottom: 40px;
+}
+
+header p{
     height: fit-content;
     width: 100%;
 
@@ -179,8 +168,8 @@ header img{
     line-height: 12rem;
 }
 
-#sctBanner p span{
-    color: var(--secun);
+header p span{
+    color: var(--prin);
 }
 
 #sctQuemSou .dvContainer{
@@ -209,14 +198,17 @@ header img{
     height: 300px;
     width: 300px;
 
-    background-image: url('../images/client/perfil.jpg');
+    background: rgba(0, 0, 0, 0.3);
+    background-blend-mode: darken;
+
+    background-image: url('../images/dev/perfil.jpg');
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
 
     border-radius: 50%;
 
-    box-shadow: 0px 0px 20px -2px var(--secun);
+    box-shadow: 0px 0px 30px -2px var(--secun);
 
     animation-name: piscaPisca;
     animation-duration: 2s;
@@ -300,7 +292,8 @@ header img{
 }
 
 #sctQuemSou .dvFundo .dvCard ul li span{
-    color: var(--secun);
+    color: var(--prin);
+    font-weight: 600;
 }
 
 #sctTraj .dvSeg{
@@ -368,7 +361,7 @@ header img{
 }
 
 #sctTraj .dvSeg .dvCard{
-    background-color: var(--prin);
+    background-color: var(--secun);
 }
 
 #sctTraj .dvSeg .dvConteu{
@@ -387,7 +380,7 @@ header img{
 #sctTraj .dvSeg .dvConteu span{
     display: flex;
 
-    border-left: 5px solid var(--secun);
+    border-left: 5px solid var(--prin);
 
     margin-top: 5px;
 
@@ -399,7 +392,7 @@ header img{
 #sctTraj .dvSeg .dvLinha{
     display: flex;
 
-    background-color: var(--secun);
+    background-color: var(--prin);
 
     border-radius: 12px;
 
@@ -459,7 +452,7 @@ header img{
     width: 30px;
 
     background-image: url("../images/icon/seta.png");
-    background-size: 40px;
+    background-size: 30px;
     background-position: center;
 
     border-radius: 50%;
@@ -477,7 +470,7 @@ header img{
     height: 40px;
     width: 40px;
 
-    border: 3px solid var(--secun);
+    border: 3px solid var(--prin);
     border-radius: 50%;
 
     position: absolute;
@@ -492,7 +485,7 @@ header img{
 #sctSkills .dvSeg .dvCard .dvTit .dvBolha .dvLiqui{
     width: 100%;
 
-    background-color: var(--secun);
+    background-color: var(--prin);
 }
 
 #sctSkills .dvSeg .dvCard:nth-child(1) .dvTit .dvBolha .dvLiqui,
@@ -621,7 +614,7 @@ header img{
 
     border-radius: 12px;
 
-    box-shadow: 0 0 20px 0px #000;
+    box-shadow: 0 0 20px 0px var(--cont);
 }
 
 #sctProjetos .dvPri .dvSub .dvImgSite{
@@ -653,10 +646,18 @@ header img{
 }
 
 #sctProjetos .dvPri .dvSub:nth-child(4) .dvImgSite{
-    background-image: url("../images/media/ballsFight.png");
+    background-image: url("../images/media/login.png");
 }
 
 #sctProjetos .dvPri .dvSub:nth-child(5) .dvImgSite{
+    background-image: url("../images/media/cadastrar.png");
+}
+
+#sctProjetos .dvPri .dvSub:nth-child(6) .dvImgSite{
+    background-image: url("../images/media/ballsFight.png");
+}
+
+#sctProjetos .dvPri .dvSub:nth-child(7) .dvImgSite{
     background-image: url("../images/media/renanDelbue.png");
 }
 
@@ -729,8 +730,7 @@ header img{
     height: 60px;
     width: 200px;
 
-    background-color: #000;
-
+    border: 2px solid var(--cont);
     border-radius: 40px;
 
     margin-inline: auto;
@@ -763,8 +763,8 @@ footer{
     color: var(--text);
     font-size: 1.4rem;
 
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 
     flex-direction: column;
     justify-content: center;
@@ -777,7 +777,29 @@ footer span{
 }
 
 footer span:first-child{
-    color: var(--secun);
+    color: var(--prin);
+    font-weight: 600;
+}
+
+#dvCreditos{
+    display: flex;
+    display: none;
+
+    height: 100vh;
+    width: 100vw;
+
+    background-color: #000;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#dvCreditos img{
+    width: 200px;
 }
 
 @media(max-width:1200px){

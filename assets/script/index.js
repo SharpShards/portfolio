@@ -16,10 +16,9 @@ function expandirSkill(){
 }
 
 function brilharBotao(){
-    this.style.backgroundColor = "var(--secun)";
-    this.style.boxShadow = "0 0 20px 3px var(--secun)";
-
-    this.children[0].style.color = "var(--cont)";
+    this.style.backgroundColor = "var(--prin)";
+    this.style.boxShadow = "0 0 20px 3px var(--prin)";
+    
     this.children[0].style.fontWeight = "800";
 }
 
