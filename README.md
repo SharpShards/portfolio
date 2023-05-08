@@ -13,4 +13,4 @@ Status: Em Progresso
 - JS
 
 ## Screenshots
-![screenshot](https://user-images.githubusercontent.com/123817885/227016791-213ebc59-0558-43b2-a78a-76fdabedb408.png)
+![portfolio](https://user-images.githubusercontent.com/123817885/236899445-704cd2ed-833d-4424-afc5-e981fb95c728.png)
