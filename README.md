@@ -13,4 +13,4 @@ Status: Em Progresso
 - JS
 
 ## Screenshots
-![portfolio](https://user-images.githubusercontent.com/123817885/236899445-704cd2ed-833d-4424-afc5-e981fb95c728.png)
+![portfolio](https://github.com/SharpShards/portfolio/assets/123817885/21c68fcd-d257-48e8-a6e0-c7559f6ddda9)
