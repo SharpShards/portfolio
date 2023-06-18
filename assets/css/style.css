@@ -652,10 +652,14 @@ header p span{
 }
 
 #sctProjetos .dvPri .dvSub:nth-child(6) .dvImgSite{
-    background-image: url("../images/media/ballsFight.png");
+    background-image: url("../images/media/superCalculadora.png");
 }
 
 #sctProjetos .dvPri .dvSub:nth-child(7) .dvImgSite{
+    background-image: url("../images/media/ballsFight.png");
+}
+
+#sctProjetos .dvPri .dvSub:nth-child(8) .dvImgSite{
     background-image: url("../images/media/renanDelbue.png");
 }
 
