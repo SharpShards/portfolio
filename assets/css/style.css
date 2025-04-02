@@ -203,7 +203,7 @@ header p span{
 
     background-image: url('../images/dev/perfil.jpg');
     background-size: cover;
-    background-position: top;
+    background-position: center;
     background-repeat: no-repeat;
 
     border-radius: 50%;
