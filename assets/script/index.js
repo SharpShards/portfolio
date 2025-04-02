@@ -11,7 +11,7 @@ function expandirSkill(){
     }else{
         sk.style.maxHeight = sk.scrollHeight + "px";
 
-        seta.style.transform = 'rotate(180deg)';
+        seta.style.transform = 'rotate(90deg)';
     }
 }
 

@@ -437,14 +437,20 @@ header p span{
 
     position: relative;
 
+    padding: 20px;
+
     flex-direction: column;
     align-items: center;
 }
 
 #sctSkills .dvSeg .dvCard .dvTit img{
-    height: 80px;
+    height: 60px;
 
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#sctSkills .dvSeg .dvCard .dvTit p{
+    margin-bottom: 20px;
 }
 
 #sctSkills .dvSeg .dvCard .dvTit .dvSeta{
@@ -458,22 +464,22 @@ header p span{
     border-radius: 50%;
 
     position: absolute;
-    bottom: -10px;
-    left: -10px;
+    bottom: -5px;
+    right: -10px;
 }
 
 #sctSkills .dvSeg .dvCard .dvTit .dvBolha{
     display: flex;
 
-    height: 40px;
-    width: 40px;
+    height: 35px;
+    width: 35px;
 
     border: 3px solid var(--prin);
     border-radius: 50%;
 
     position: absolute;
-    bottom: -10px;
-    right: -10px;
+    bottom: -5px;
+    left: -5px;
 
     overflow: hidden;
 
