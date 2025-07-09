@@ -1,12 +1,16 @@
+/* Fontes */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
+/* Paleta */
 :root{
     --prin: #3DF7D5;
     --secun: #0A0A0A;
     --cont: #1E1E1E;
-    --text: #FFF;
+    --text: #ECE8E1;
 }
 
+/* Configurações Básicas */
 html{
     font-size: 62.5%;
 }
@@ -27,19 +31,29 @@ body::-webkit-scrollbar-thumb{
 
 /*********************************************************************************************/
 
-@keyframes bordas{
+@keyframes movimentoMockups{
     0%{
-        box-shadow: inset 0 0 20px 5px var(--prin), 0 0 20px 5px var(--prin);
-        
+        transform: translateY(100vh);
     }
 
-    50%{
-        box-shadow: inset 0 0 40px 10px var(--prin), 0 0 40px 10px var(--prin);
-        
+    20%{
+        transform: translateY(-100px);
+    }
+
+    40%{
+        transform: translateY(-120px);
+    }
+
+    60%{
+        transform: translateY(-120px);
+    }
+
+    60%{
+        transform: translateY(-100px);
     }
 
     100%{
-        box-shadow: inset 0 0 20px 5px var(--prin), 0 0 20px 5px var(--prin);
+        transform: translateY(100vh);
     }
 }
 
@@ -65,7 +79,7 @@ body::-webkit-scrollbar-thumb{
     border: none;
     box-sizing: border-box;
 
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Rubik';
 
     z-index: 1;
 }
@@ -75,7 +89,7 @@ a{
     text-decoration: none;
 }
 
-h1{
+h2{
     color: var(--text);
     font-size: 4rem;
 
@@ -85,8 +99,8 @@ h1{
     padding-bottom: 60px;
 }
 
-h1::after,
-h1::before{
+h2::after,
+h2::before{
     content: "";
 
     display: block;
@@ -102,11 +116,11 @@ h1::before{
     box-shadow: 0px 0px 15px 2px var(--prin);
 }
 
-h1::before{
+h2::before{
     width: 800px;
 }
 
-h1::after{
+h2::after{
     width: 200px;
 }
 
@@ -129,6 +143,9 @@ section{
     margin-inline: auto;
 }
 
+/****************************************************************************/
+
+/* Header */
 header{
     display: flex;
 
@@ -137,41 +154,110 @@ header{
 
     background-color: var(--secun);
 
-    box-shadow: inset 0 0 0px 0px var(--prin), 0 0 20px 5px var(--secun);
-
-    animation-name: bordas;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-
-    margin-bottom: 60px;
-
-    padding: 40px;
+    padding: 80px;
 
     flex-direction: column;
     align-items: center;
 }
 
-header img{
-    height: 140px;
+header #imgLogo{
+    height: 100px;
 
-    margin-bottom: 40px;
+    margin-bottom: 80px;
 }
 
-header p{
-    height: fit-content;
+header #dvHeroArea{
+    display: flex;
+    width: 100%;
+}
+
+header #dvHeroArea #dvHATexto{
+    flex: 1; 
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+}   
+
+header #dvHeroArea #dvHATexto h1{
+    display: flex;
+
     width: 100%;
 
     color: var(--text);
-    font-size: 8rem;
-    font-weight: 600;
 
-    text-align: center;
-    line-height: 12rem;
+    margin-bottom: 20px;
+
+    flex-direction: column;
+    align-items: center;
 }
 
-header p span{
-    color: var(--prin);
+header #dvHeroArea #dvHATexto h1 span:first-child{
+    font-size: 4.1rem;
+    font-weight: 400;
+}
+
+header #dvHeroArea #dvHATexto h1 span:last-child{
+    font-size: 8rem;
+    font-weight: 600;
+}
+
+header #dvHeroArea #dvHATexto p{
+    width: 70%;
+
+    color: var(--text);
+    font-family: Nunito;
+    font-size: 2rem;
+    font-weight: 500;
+
+    margin-bottom: 80px;
+}
+
+header #dvHeroArea #dvHATexto button{
+    background-color: var(--prin);
+
+    color: var(--secun);
+    font-size: 2.2rem;
+    font-family: Nunito;
+    font-weight: 800;
+
+    border-radius: 12px;
+
+    padding: 15px 30px;
+}
+
+header #dvHeroArea #dvHATexto button:hover{
+    cursor: pointer;
+}
+
+header #dvHeroArea #dvHAImagens{
+    flex: 1;
+    display: flex;
+
+    justify-content: center;
+}
+
+header #dvHeroArea #dvHAImagens img{
+    z-index: 1;
+
+    width: 70%;
+
+    animation-name: movimentoMockups;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+    position: relative;
+}
+
+/* Main */
+
+#sctQuemSou{
+    z-index: 2;
+
+    background-color: var(--cont);
+
+    position: relative;
 }
 
 #sctQuemSou .dvContainer{
