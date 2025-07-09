@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 :root{
-    --prin: #730d0d;
-    --secun: #000;
-    --cont: #0a0a0a;
+    --prin: #3DF7D5;
+    --secun: #0A0A0A;
+    --cont: #1E1E1E;
     --text: #FFF;
 }
 
@@ -24,6 +24,8 @@ body::-webkit-scrollbar{
 body::-webkit-scrollbar-thumb{
     background-color: var(--prin);
 }
+
+/*********************************************************************************************/
 
 @keyframes bordas{
     0%{
