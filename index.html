@@ -24,7 +24,7 @@
 
                 <p>Conheça um pouco sobre mim, minhas habilidades e meu trabalho.</p>      
                 
-                <button>Explorar Portfólio</button>
+                <button class="button">Explorar Portfólio</button>
             </div>
     
             <div id="dvHAImagens">
@@ -33,56 +33,63 @@
         </div>
     </header>
 
-    <main>        
+    <main>
         <section id="sctQuemSou">
             <div class="dvContainer">
-                <div class="dvPri">
-                    <h1>Quem é Lucas Rafael?</h1>
+                <div class="dvTit">
+                    <h2>Quem é Lucas Rafael?</h2>
                 </div>
-                <div class="dvSeg">
-                    <div class="dvSub">
-                        <div></div>                                                
+
+                <div class="dvInfos">
+                    <div id="dvDados" class="dvCard">
+                        <ul>
+                            <li><span>Nome:</span> Lucas Rafael de Azevedo Corrêa</li>
+                            <li><span>Idade:</span> 20 anos</li>
+                            <li><span>Cidade:</span> Magé, RJ</li>
+                            <li><span>Área:</span> Desenvolvedor Full-Stack</li>
+                            <li id="liPort"><span>Idiomas:</span> Português Nativo</li>
+                            <li><span id="spIngles">Idiomas:</span> Inglês Intermediário</li>
+                        </ul>
                     </div>
-                    <div class="dvSub">
-                        <div class="dvFundo">
-                            <div class="dvCard">
-                                <ul>
-                                    <li><span>Nome:</span> Lucas Rafael de Azevedo Corrêa</li>
-                                    <li><span>Idade:</span> 20 anos</li>
-                                    <li><span>Cidade:</span> Magé, RJ</li>
-                                    <li><span>Área:</span> Desenvolvedor Full-Stack</li>
-                                </ul>
-                            </div>
-                            <div class="dvCard">
-                                <ul>
-                                    <li><span>Português:</span> Nativo</li>
-                                    <li><span>English:</span> Intermediário</li>
-                                </ul>
-                            </div>
-                            <div class="dvCard">
-                                <ul>
-                                    <li>
-                                        <span>Identificação:</span> Sharp Shards é um pseudônimo
-                                        criado para me relacionar a qualquer produto criado por
-                                        mim. Pode se dizer que Sharp Shards é como a identificação
-                                        do idealizador e fabricante: Lucas Rafael.
-                                    </li>
-                                    <li>
-                                        <span>Descrição:</span> Sou um entusiasta da tecnologia e das várias 
-                                        possibilidades que ela proporciona. Tenho interesse e conhecimento em
-                                        diversas áreas, com foco especial em programação. Ao longo dos anos,
-                                        estudei diversos campos, como operação de computadores, desenvolvimento
-                                        de jogos, montagem e manutenção. Recentemente, venho me aprimorando
-                                        constantemente como desenvolvedor Full-Stack.
-                                    </li>
-                                    <li>
-                                        <span>Objetivo:</span> Ampliar minhas habilidades e me
-                                        desenvolver como profissional e pessoa. Em constante evolução
-                                        para desenvolver novos produtos.
-                                    </li>
-                                </ul>
-                            </div>
+                    <div id="dvContato" class="dvCard">
+                        <a target="_blank" href="mailto:sharpshardspro@gmail.com"><div id="dvEmail"></div></a>
+                        <a target="_blank" href="https://wa.me/+5521985717179"><div id="dvZap"></div></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/lucas-rafael-correa"><div id="dvLinked"></div></a>
+                    </div>
+                    <div id="dvFundoFoto">
+                        <div id="dvFoto"></div>                                                
+                    </div>
+                    <div id="dvCurriculo">
+                        <span class="button">Currículo</span>
+                        <button id="btnVisualizar" class="btnCurriculo"></button>
+                        <button id="btnBaixar" class="btnCurriculo"></button>
+                    </div>
+                    <div id="dvTrajetoria" class="dvCard">
+                        <div id="dvBolhas">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div class="dvAtivada"></div>
                         </div>
+
+                        <div id="dvFormacao">
+                            <p id="pFormacao">Engenharia Mecânica</p>
+                            <p id="pLugar">UCP</p>
+                            <p id="pTipo">Graduação</p>
+                            <p id="pDuracao">Cursando</p>
+                        </div>
+                    </div>
+                    <div id="dvSkills" class="dvCard">
+                        <img src="assets/images/icon/html.png" alt="HTML">
+                        <img src="assets/images/icon/css.png" alt="CSS">
+                        <img src="assets/images/icon/js.png" alt="JavaScript">
+                        <img src="assets/images/icon/python.png" alt="Python">
+                        <img src="assets/images/icon/php.png" alt="PHP">
+                        <img src="assets/images/icon/java.png" alt="Java">
+                        <img src="assets/images/icon/git.png" alt="Git">
+                        <img src="assets/images/icon/mysql.png" alt="MySQL">
                     </div>
                 </div>
             </div>
@@ -91,7 +98,7 @@
         <section id="sctTraj">
             <div class="dvContainer">
                 <div class="dvPri">
-                    <h1>Trajetória</h1>
+                    <h2>Trajetória</h2>
                 </div>
     
                 <div class="dvSeg">
@@ -186,7 +193,7 @@
         <section id="sctSkills">
             <div class="dvContainer">
                 <div class="dvPri">
-                    <h1>Skills</h1>                    
+                    <h2>Skills</h2>                    
                     <p>
                         Um pequeno resumo das minhas habilidades e nível de conhecimentos
                         em determinadas tecnologias e ferramentas.
@@ -522,23 +529,9 @@
             </div>
         </section>
 
-        <section id="sctContato">
-            <div class="dvContainer">
-                <h2>Entre em contato: </h2>
-                
-                <div class="dvSub">
-                    <a target="_blank" href="https://wa.me/+5521985717179"><img src="assets/images/icon/whatsapp.png" alt="Whatsapp"></a>
-                    <div id="dvFundoGmail">
-                        <a target="_blank" href="mailto:sharpshardspro@gmail.com"><img src="assets/images/icon/gmail.png" alt="Gmail"></a>
-                    </div>
-                    <a target="_blank" href="https://www.linkedin.com/in/sharp-shards/"><img src="assets/images/icon/linkedin.png" alt="Linkedin"></a>
-                </div>
-            </div>            
-        </section>
-
         <section id="sctProjetos">
             <div class="dvContainer">
-                <h1>Projetos</h1>
+                <h2>Projetos</h2>
                 
                 <div class="dvPri">
                     <div class="dvSub">

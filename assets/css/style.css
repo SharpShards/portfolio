@@ -6,7 +6,8 @@
 :root{
     --prin: #3DF7D5;
     --secun: #0A0A0A;
-    --cont: #1E1E1E;
+    --cont: #151515;
+    --det: #1E1E1E;
     --text: #ECE8E1;
 }
 
@@ -29,8 +30,7 @@ body::-webkit-scrollbar-thumb{
     background-color: var(--prin);
 }
 
-/*********************************************************************************************/
-
+/* Animações */
 @keyframes movimentoMockups{
     0%{
         transform: translateY(100vh);
@@ -71,6 +71,7 @@ body::-webkit-scrollbar-thumb{
     }
 }
 
+/* Geral */
 *{
     margin: 0;
     padding: 0;
@@ -92,11 +93,13 @@ a{
 h2{
     color: var(--text);
     font-size: 4rem;
+    font-family: "Rubik";
+    font-weight: 500;
 
     text-align: center;
     line-height: 8rem;
 
-    padding-bottom: 60px;
+    margin-bottom: 80px;
 }
 
 h2::after,
@@ -113,7 +116,7 @@ h2::before{
 
     margin-inline: auto;
 
-    box-shadow: 0px 0px 15px 2px var(--prin);
+    box-shadow: 0px 0px 10px 2px var(--prin);
 }
 
 h2::before{
@@ -133,8 +136,7 @@ section{
 
     background-color: var(--secun);
 
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding: 80px;
 }
 
 .dvContainer{
@@ -143,7 +145,22 @@ section{
     margin-inline: auto;
 }
 
-/****************************************************************************/
+.button{
+    background-color: var(--prin);
+
+    color: var(--secun);
+    font-size: 2.2rem;
+    font-family: Nunito;
+    font-weight: 800;
+
+    border-radius: 12px;
+
+    padding: 15px 30px;
+}
+
+.button:hover{
+    cursor: pointer;
+}
 
 /* Header */
 header{
@@ -213,23 +230,6 @@ header #dvHeroArea #dvHATexto p{
     margin-bottom: 80px;
 }
 
-header #dvHeroArea #dvHATexto button{
-    background-color: var(--prin);
-
-    color: var(--secun);
-    font-size: 2.2rem;
-    font-family: Nunito;
-    font-weight: 800;
-
-    border-radius: 12px;
-
-    padding: 15px 30px;
-}
-
-header #dvHeroArea #dvHATexto button:hover{
-    cursor: pointer;
-}
-
 header #dvHeroArea #dvHAImagens{
     flex: 1;
     display: flex;
@@ -250,8 +250,7 @@ header #dvHeroArea #dvHAImagens img{
     position: relative;
 }
 
-/* Main */
-
+/* QuemSou */
 #sctQuemSou{
     z-index: 2;
 
@@ -264,25 +263,112 @@ header #dvHeroArea #dvHAImagens img{
     flex-direction: column;
 }
 
-#sctQuemSou .dvSeg{
-    display: flex;
+#sctQuemSou .dvInfos{
+    display: grid;
+
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, fit-content);
+    grid-gap: 20px;
+    grid-template-areas:
+        "dados dados foto foto trajetoria trajetoria"
+        "dados dados foto foto trajetoria trajetoria"
+        "dados dados foto foto skills skills"
+        "contato contato curriculo curriculo skills skills" 
 }
 
-#sctQuemSou .dvSeg .dvSub{
-    display: flex;
+#sctQuemSou .dvInfos .dvCard{
+    background-color: var(--det);
 
+    border-radius: 12px;
+
+    padding: 30px;
+}
+
+#sctQuemSou .dvInfos #dvDados{
+    grid-area: dados;
+}
+
+#sctQuemSou .dvInfos #dvDados ul{
+    display: flex;
+    
     flex-direction: column;
 }
 
-#sctQuemSou .dvSeg .dvSub:first-child{
-    flex: 1;
-    display: flex;
+#sctQuemSou .dvInfos #dvDados ul li{
+    color: var(--text);
+    font-size: 1.6rem;
+    font-family: Nunito;
+    font-weight: 600;
 
-    align-items: start;
-    justify-content: center;
+    list-style-type: none;
+
+    margin-bottom: 20px;
 }
 
-#sctQuemSou .dvSeg .dvSub:first-child div{
+#sctQuemSou .dvInfos #dvDados ul li span{
+    color: var(--prin);
+    font-family: Nunito;
+    font-weight: 800;
+}
+
+#sctQuemSou .dvInfos #dvDados ul #liPort{
+    margin-bottom: 8px;
+}
+
+#sctQuemSou .dvInfos #dvDados ul li #spIngles{
+    opacity: 0;
+}
+
+#sctQuemSou .dvInfos #dvContato{
+    grid-area: contato;
+
+    display: flex;
+
+    padding: 20px;
+
+    justify-content: space-evenly;
+}
+
+#sctQuemSou .dvInfos #dvContato div{
+    height: 60px;
+    width: 60px;
+
+    background-color: var(--cont);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 50%;
+}
+
+#sctQuemSou .dvInfos #dvContato div:hover{
+    cursor: pointer;
+}
+
+#sctQuemSou .dvInfos #dvContato #dvEmail{
+    background-image: url("../images/icon/email.svg");
+    background-size: 60%;
+}
+
+#sctQuemSou .dvInfos #dvContato #dvZap{
+    background-image: url("../images/icon/whatsapp.svg");
+    background-size: 55%;
+}
+
+#sctQuemSou .dvInfos #dvContato #dvLinked{
+    background-image: url("../images/icon/linkedin.svg");
+    background-size: 50%;
+}
+
+#sctQuemSou .dvInfos #dvFundoFoto{
+    grid-area: foto;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#sctQuemSou .dvInfos #dvFundoFoto #dvFoto{
     height: 300px;
     width: 300px;
 
@@ -304,85 +390,139 @@ header #dvHeroArea #dvHAImagens img{
     animation-iteration-count: infinite;
 }
 
-#sctQuemSou .dvSeg .dvSub:first-child h2{
-    color: var(--text);
-    font-size: 3rem;
-    font-weight: 500;
+#sctQuemSou .dvInfos #dvCurriculo{
+    grid-area: curriculo;
 
-    margin-top: 20px;
-    margin-bottom: 5px;
-}
-
-#sctQuemSou .dvSeg .dvSub:first-child h3{
-    color: var(--text);
-    font-size: 2rem;
-    font-weight: 400;
-}
-
-#sctQuemSou .dvSeg .dvSub:last-child{
-    flex: 2;
-}
-
-#sctQuemSou .dvFundo{
-    display: grid;
-
-    height: 100%;
-    width: 100%;
-
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: min-content;
-    grid-gap: 10px;
-    grid-template-areas:
-        "desc lang"
-        "textos textos";
-}
-
-#sctQuemSou .dvFundo .dvCard{
-    background-color: var(--cont);
-
-    border-radius: 12px;
-
-    padding: 20px;
-}
-
-#sctQuemSou .dvFundo .dvCard:nth-child(1){
-    grid-area: desc;
-}
-
-#sctQuemSou .dvFundo .dvCard:nth-child(2){
-    grid-area: lang;
-}
-
-#sctQuemSou .dvFundo .dvCard:nth-child(3){
-    grid-area: textos;
-}
-
-#sctQuemSou .dvFundo .dvCard ul{
     display: flex;
 
-    height: 100%;
-    width: 100%;
-    
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: end;
 }
 
-#sctQuemSou .dvFundo .dvCard ul li{
+#sctQuemSou .dvInfos #dvCurriculo span{
+    display: flex;
+
+    height: 60px;
+    
+    background-color: var(--prin);
+    
+    align-items: center;
+}
+
+#sctQuemSou .dvInfos #dvCurriculo .btnCurriculo{
+    height: 60px;
+    width: 60px;
+
+    background-color: var(--prin);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 12px;
+}
+
+#sctQuemSou .dvInfos #dvCurriculo .btnCurriculo:hover{
+    cursor: pointer;
+}
+
+#sctQuemSou .dvInfos #dvCurriculo #btnVisualizar{
+    background-image: url("../images/icon/olho.svg");
+    background-size: 70%;
+}
+
+#sctQuemSou .dvInfos #dvCurriculo #btnBaixar{
+    background-image: url("../images/icon/arrowDown.svg");
+    background-size: 60%;
+}
+
+#sctQuemSou .dvInfos #dvTrajetoria{
+    grid-area: trajetoria;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+#sctQuemSou .dvInfos #dvTrajetoria #dvBolhas{
+    display: flex;
+
+    height: fit-content;
+    width: 100%;
+
+    margin-bottom: 20px;
+
+    justify-content: space-between;
+}
+
+#sctQuemSou .dvInfos #dvTrajetoria #dvBolhas div{
+    height: 40px;
+    width: 40px;
+
+    background-color: var(--cont);
+
+    border-radius: 50%;
+}
+
+#sctQuemSou .dvInfos #dvTrajetoria #dvBolhas div:hover{
+    cursor: pointer;
+}
+
+#sctQuemSou .dvInfos #dvTrajetoria #dvBolhas .dvAtivada{
+    background-color: var(--prin);
+}
+
+#sctQuemSou .dvInfos #dvTrajetoria #dvFormacao{
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+        "formacao formacao"
+        "lugar tipo"
+        "duracao .";
+}
+
+#sctQuemSou .dvInfos #dvTrajetoria #dvFormacao p{
     color: var(--text);
     font-size: 1.6rem;
 
-    line-height: 2.5rem;
-    text-align: justify;
-
-    list-style-type: none;
-
-    margin-bottom: 5px;
+    margin-bottom: 20px;
 }
 
-#sctQuemSou .dvFundo .dvCard ul li span{
-    color: var(--prin);
-    font-weight: 600;
+#sctQuemSou .dvInfos #dvTrajetoria #dvFormacao #pFormacao{
+    grid-area: formacao;
+    
+    font-size: 2.2rem;
 }
+
+#sctQuemSou .dvInfos #dvTrajetoria #dvFormacao #pLugar{
+    grid-area: lugar;
+}
+
+#sctQuemSou .dvInfos #dvTrajetoria #dvFormacao #pTipo{
+    grid-area: tipo;
+}
+
+#sctQuemSou .dvInfos #dvTrajetoria #dvFormacao #pDuracao{
+    grid-area: duracao;
+}
+
+#sctQuemSou .dvInfos #dvSkills{
+    grid-area: skills;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, fit-content);
+    grid-gap: 20px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#sctQuemSou .dvInfos #dvSkills img{
+    width: 80%;
+}
+
+/* Outros */
 
 #sctTraj .dvSeg{
     display: grid;
