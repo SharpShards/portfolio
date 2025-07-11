@@ -31,6 +31,18 @@ function ativarBolha(){
 
     // Muda texto
     let elemento = this.getAttribute("id");
+    
+    formacao.style.transform = "translateX(40px)";
+    formacao.style.opacity = 0;
+
+    setTimeout(function(){
+        formacao.style.transition = "transform 400ms ease-out, opacity 800ms linear";
+        formacao.style.transform = "translateX(0px)";
+        formacao.style.opacity = 1;
+
+    }, 100)
+    
+    formacao.style.transition = "";
 
     if(elemento == "dvPri"){
         formacao.children[0].innerHTML = "Operador de Computador";

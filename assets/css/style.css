@@ -508,6 +508,8 @@ header #dvHeroArea #dvHAImagens img{
     background-color: var(--cont);
 
     border-radius: 50%;
+
+    transition: background-color 200ms linear;
 }
 
 #sctQuemSou .dvInfos #dvTrajetoria #dvBolhas div:hover{
