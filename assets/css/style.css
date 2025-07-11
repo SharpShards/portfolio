@@ -439,6 +439,8 @@ header #dvHeroArea #dvHAImagens img{
 }
 
 #sctQuemSou .dvInfos #dvCurriculo #dvVisuCurriculo{
+    z-index: 3;
+
     display: none;
 
     height: 100vh;
