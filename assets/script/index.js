@@ -65,6 +65,34 @@ function ativarBolha(){
     }
 }
 
+function visualizarCurriculo(){
+    fundoCurriculo.style.display = "flex";
+
+    // Fade in
+    setTimeout(function(){
+        fundoCurriculo.style.opacity = 1;
+    }, 1);
+
+    // Zoom out
+    setTimeout(function(){
+        curriculo.style.transform = "scale(1)";
+    }, 100);
+}
+
+function fecharCurriculo(){
+    // Zoom in
+    curriculo.style.transform = "scale(0.2)";
+
+    // Fade out
+    setTimeout(function(){
+        fundoCurriculo.style.opacity = 0;
+    }, 1);    
+
+    setTimeout(function(){
+        fundoCurriculo.style.display = "none";
+    }, 500);
+}
+
 function expandirSkill(){
     let sk = this.children[1];
     let seta = this.children[0].children[0];
@@ -114,6 +142,12 @@ const bolhas = document.querySelectorAll("#sctQuemSou .dvInfos #dvTrajetoria #dv
         bolhas[loop].addEventListener("click", ativarBolha);
     }
 const formacao = document.querySelector("#sctQuemSou .dvInfos #dvTrajetoria #dvFormacao");
+const visuCurriculo = document.querySelector("#sctQuemSou .dvInfos #dvCurriculo #btnVisualizar");
+    visuCurriculo.addEventListener("click", visualizarCurriculo);
+const fundoCurriculo = document.querySelector("#sctQuemSou .dvInfos #dvCurriculo #dvVisuCurriculo");
+const curriculo = document.querySelector("#sctQuemSou .dvInfos #dvCurriculo #dvVisuCurriculo #ifCurriculo");
+const x = document.querySelector("#sctQuemSou .dvInfos #dvCurriculo #dvVisuCurriculo #imgX");
+    x.addEventListener("click", fecharCurriculo);
 
 const sectionProjetos = document.querySelector("#sctProjetos");
 const button = document.querySelectorAll("#sctProjetos .dvPri .dvSub button");
