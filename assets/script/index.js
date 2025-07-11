@@ -93,36 +93,186 @@ function fecharCurriculo(){
     }, 500);
 }
 
-function expandirSkill(){
-    let sk = this.children[1];
-    let seta = this.children[0].children[0];
+function alterarCategorias(){
+    // Tira os projetos adicionados
+    fundoProjeto.innerHTML = "";
 
-    seta.style.transition = 'transform 250ms linear';
+    // Categoria anterior
+    let anterior = document.getElementsByClassName("dvSelecionado");
 
-    if(sk.style.maxHeight){
-        sk.style.maxHeight = null;
-
-        seta.style.transform = 'rotate(0deg)';
-    }else{
-        sk.style.maxHeight = sk.scrollHeight + "px";
-
-        seta.style.transform = 'rotate(90deg)';
+    // Só alterna entre as categorias. Não deseleciona a categoria atual.
+    if(this.getAttribute("id") != anterior[0].getAttribute("id")){
+        anterior[0].children[0].setAttribute("src", anterior[0].children[0].getAttribute("src").replace("Preto", "Branco"));
+    
+        anterior[0].removeAttribute("class");
     }
+
+    // Categoria atual
+    this.children[0].setAttribute("src", this.children[0].getAttribute("src").replace("Branco", "Preto"));
+    
+    this.setAttribute("class", "dvSelecionado");
+
+    // Carregar projetos
+    carregarProjetos(this.getAttribute("data-categoria"));
+}
+
+function carregarProjetos(categoria){
+    let sites = {
+        "portfolio": {
+            "portfolio": {
+                imagem: "assets/images/media/portfolio.png",
+                nome: "Portfólio",
+                tecnologias: ["HTML", "CSS", "Javascript"],
+                link: "",
+                repo: "https://github.com/SharpShards/portfolio.git"
+            },
+            "renan delbue": {
+                imagem: "assets/images/media/renanDelbue.png",
+                nome: "Renan Delbue",
+                tecnologias: ["HTML", "CSS", "Javascript"],
+                link: "https://renan-delbue.netlify.app/",
+                repo: "https://github.com/SharpShards/renan-delbue.git"
+            }
+        },
+        "landing page": {
+            "starbucks": {
+                imagem: "assets/images/media/starbucks.png",
+                nome: "Starbuks",
+                tecnologias: ["HTML", "CSS"],
+                link: "https://sb-homepage.netlify.app",
+                repo: "https://github.com/SharpShards/starbucks.git"
+            }
+        },
+        "ferramenta": { 
+            "orange points": {
+                imagem: "assets/images/media/orangePoints.png",
+                nome: "Orange Points",
+                tecnologias: ["HTML", "CSS", "Javascript"],
+                link: "https://orange-points.netlify.app",
+                repo: "https://github.com/SharpShards/orange-points.git"
+            },
+            "super calculadora": {
+                imagem: "assets/images/media/superCalculadora.png",
+                nome: "Super Calculadora",
+                tecnologias: ["HTML", "CSS", "Javascript"],
+                link: "https://super-calculadora-ss.netlify.app/",
+                repo: "https://github.com/SharpShards/super-calculadora.git"
+            }
+        },
+        "jogo": {
+            "balls fight": {
+                imagem: "assets/images/media/ballsFight.png",
+                nome: "Balls Fight",
+                tecnologias: ["HTML", "CSS", "Javascript"],
+                link: "https://balls-fight.netlify.app/",
+                repo: "https://github.com/SharpShards/balls-fight.git"
+            }
+        }
+    }
+
+    let site = Object.keys(sites[categoria]);
+    let contador = 0;
+
+    for(let loop = 0; loop < site.length; loop++){
+        // Cria card
+        let div = document.createElement("div");
+            div.setAttribute("class", "dvProjeto");
+            div.style.transitionDelay = `0.0${contador}s`;
+                contador += 8
+
+        // Cria imagem
+        let imagem = document.createElement("img");
+            imagem.setAttribute("class", "imgProjeto");
+            imagem.setAttribute("src", sites[categoria][site[loop]].imagem);
+        
+        // Cria título
+        let nome = document.createElement("h3");
+            nome.setAttribute("class", "hProjeto");
+            nome.innerText = sites[categoria][site[loop]].nome;    
+
+        // Cria fundo das tecnologias
+        let fundoTech = document.createElement("div");
+            fundoTech.setAttribute("class", "dvFundoTech");
+
+        fundoProjeto.appendChild(div);
+        div.appendChild(imagem);
+        div.appendChild(nome);
+        div.appendChild(fundoTech);
+
+        // Cria as tecnologias
+        for(let l = 0; l < sites[categoria][site[loop]].tecnologias.length; l++){
+            let tech = document.createElement("img");
+                tech.setAttribute("class", "imgTech");
+                tech.setAttribute("src", `assets/images/icon/${sites[categoria][site[loop]].tecnologias[l]}.svg`);
+
+                fundoTech.appendChild(tech);
+        }
+
+        // Cria o fundo para os botões
+        let fundoBut = document.createElement("div");
+            fundoBut.setAttribute("class", "dvFundoBut");
+        
+        div.appendChild(fundoBut);
+
+        // Só cria o botão se precisar redirecionar para o site
+        if(sites[categoria][site[loop]].link != ""){
+            // Cria o botão para redirecionar ao site
+            let bot = document.createElement("button");
+                bot.setAttribute("class", "btnProjeto");
+    
+            let a = document.createElement("a");
+                a.setAttribute("class", "aProjeto");
+                a.setAttribute("href", sites[categoria][site[loop]].link);
+                a.setAttribute("target", "_blank");
+                a.innerText = "Site";
+                a.addEventListener('mouseover', brilharBotao);
+                a.addEventListener('mouseout', normalizarBotao);
+    
+            fundoBut.appendChild(bot);
+            bot.appendChild(a);
+        }
+
+        // Cria o botão para redirecionar ao repositório
+        let bot = document.createElement("button");
+            bot.setAttribute("class", "btnRepositorio");
+
+        let a = document.createElement("a");
+            a.setAttribute("class", "aRepositorio");
+            a.setAttribute("href", sites[categoria][site[loop]].repo);
+            a.setAttribute("target", "_blank");
+            a.innerText = "GitHub";
+            a.addEventListener('mouseover', brilharBotao);
+            a.addEventListener('mouseout', normalizarBotao);
+
+        fundoBut.appendChild(bot);
+        bot.appendChild(a);
+
+        // Animação cards
+        animarCards(div);
+    }
+}
+
+function animarCards(div){
+    setTimeout(function(){
+        div.style.opacity = 1;
+        div.style.transform = "translateY(0px)";
+    }, 50)
 }
 
 function brilharBotao(){
     this.style.backgroundColor = "var(--prin)";
     this.style.boxShadow = "0 0 20px 3px var(--prin)";
     
-    this.children[0].style.fontWeight = "800";
+    this.style.fontWeight = "900";
+    this.style.color = "var(--secun)";
 }
 
 function normalizarBotao(){
-    this.style.background = "rgba(0, 0, 0, 0.2)";
+    this.style.background = "var(--secun)";
     this.style.boxShadow = "none";
 
-    this.children[0].style.color = "var(--text)";
-    this.children[0].style.fontWeight = "600";
+    this.style.color = "var(--text)";
+    this.style.fontWeight = "600";
 }
 
 // Declarações
@@ -150,14 +300,15 @@ const x = document.querySelector("#sctQuemSou .dvInfos #dvCurriculo #dvVisuCurri
     x.addEventListener("click", fecharCurriculo);
 
 const sectionProjetos = document.querySelector("#sctProjetos");
-const button = document.querySelectorAll("#sctProjetos .dvPri .dvSub button");
-    for(let loop = 0; loop < button.length; loop++){
-        button[loop].addEventListener('mouseover', brilharBotao);
-        button[loop].addEventListener('mouseout', normalizarBotao);
+const fundoProjeto = document.querySelector("#sctProjetos #dvSites");
+const categorias = document.querySelectorAll("#sctProjetos #dvCategorias div")
+    for(let loop = 0; loop < categorias.length; loop ++){
+        categorias[loop].addEventListener("click", alterarCategorias);
     }
-const a = document.querySelectorAll('#sctProjetos .dvPri .dvSub button a');
-const seta = document.querySelectorAll('.dvSeta');
 
 // Main
 //// Animação Hero Image
 setInterval(mudarImagem, 4000);
+
+//// Carregar primeira categoria em Projetos
+carregarProjetos("landing page");

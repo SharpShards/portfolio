@@ -571,391 +571,116 @@ header #dvHeroArea #dvHAImagens img{
     width: 80%;
 }
 
-/* Outros */
+/* Projetos */
+#sctProjetos #dvCategorias{
+    display: flex;
 
-#sctTraj .dvSeg{
-    display: grid;
+    height: fit-content;
+    width: 100%;
 
-    grid-template-columns: repeat(9, 1fr);
-    grid-template-rows: min-content 5px min-content;
-    grid-gap: 40px 10px;
-    grid-template-areas: 
-        "traj1 traj1 vazio1 traj2 traj2 vazio2 traj3 traj3 vazio6"
-        "linha linha linha linha linha linha linha linha linha"
-        "vazio3 traj4 traj4 vazio4 traj5 traj5 vazio5 traj6 traj6";
+    margin-bottom: 40px;
 }
 
-#sctTraj .dvSeg .dvCard:nth-child(1){
-    grid-area: traj1;
-}
+#sctProjetos #dvCategorias div{
+    display: flex;
 
-#sctTraj .dvSeg .dvCard:nth-child(2){
-    grid-area: vazio1;
-}
+    height: 120px;
+    width: 120px;
 
-#sctTraj .dvSeg .dvCard:nth-child(3){
-    grid-area: traj2;
-}
-
-#sctTraj .dvSeg .dvCard:nth-child(4){
-    grid-area: vazio2;
-}
-
-#sctTraj .dvSeg .dvCard:nth-child(5){
-    grid-area: traj3;
-}
-
-#sctTraj .dvSeg .dvCard:nth-child(6){
-    grid-area: linha;
-}
-
-#sctTraj .dvSeg .dvCard:nth-child(7){
-    grid-area: vazio3;
-}
-
-#sctTraj .dvSeg .dvCard:nth-child(8){
-    grid-area: traj4;
-}
-
-#sctTraj .dvSeg .dvCard:nth-child(9){
-    grid-area: vazio4;
-}
-
-#sctTraj .dvSeg .dvCard:nth-child(10){
-    grid-area: traj5;
-}
-
-#sctTraj .dvSeg .dvCard:nth-child(11){
-    grid-area: vazio5;
-}
-
-#sctTraj .dvSeg .dvCard:nth-child(12){
-    grid-area: traj6;
-}
-
-#sctTraj .dvSeg .dvCard:nth-child(13){
-    grid-area: vazio6;
-}
-
-#sctTraj .dvSeg .dvCard{
-    background-color: var(--secun);
-}
-
-#sctTraj .dvSeg .dvConteu{
     background-color: var(--cont);
-
-    color: var(--text);
-    font-size: 1.6rem;
-
-    padding: 15px;
-
-    border-radius: 7px;
-
-    position: relative;
-}
-
-#sctTraj .dvSeg .dvConteu span{
-    display: flex;
-
-    border-left: 5px solid var(--prin);
-
-    margin-top: 5px;
-
-    padding: 10px;
-
-    flex-direction: column;
-}
-
-#sctTraj .dvSeg .dvLinha{
-    display: flex;
-
-    background-color: var(--prin);
 
     border-radius: 12px;
 
-    justify-content: space-between;
-    align-items: center;
-}
-
-#sctSkills .dvPri p{
-    color: var(--text);
-    font-size: 1.6rem;
-
-    text-align: justify;
-    text-indent: 2rem;
-}
-
-#sctSkills .dvSeg{
-    display: grid;
-
-    margin-top: 40px;
-
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
-}
-
-#sctSkills .dvSeg .dvCard{
-    background-color: var(--cont);
-
-    border-radius: 7px;
-
-    padding: 20px;
-}
-
-#sctSkills .dvSeg .dvCard:hover{
-    cursor: pointer;
-}
-
-#sctSkills .dvSeg .dvCard .dvTit{
-    display: flex;
-
-    color: var(--text);
-    font-size: 2.2rem;
-
-    position: relative;
-
-    padding: 20px;
+    margin-right: 20px;
+    padding: 15px;
 
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 }
 
-#sctSkills .dvSeg .dvCard .dvTit img{
-    height: 60px;
-
-    margin-bottom: 20px;
+#sctProjetos #dvCategorias div:hover{
+    cursor: pointer;
 }
 
-#sctSkills .dvSeg .dvCard .dvTit p{
-    margin-bottom: 20px;
-}
-
-#sctSkills .dvSeg .dvCard .dvTit .dvSeta{
-    height: 30px;
-    width: 30px;
-
-    background-image: url("../images/icon/seta.png");
-    background-size: 30px;
-    background-position: center;
-
-    border-radius: 50%;
-
-    position: absolute;
-    bottom: -5px;
-    right: -10px;
-}
-
-#sctSkills .dvSeg .dvCard .dvTit .dvBolha{
-    display: flex;
-
-    height: 35px;
-    width: 35px;
-
-    border: 3px solid var(--prin);
-    border-radius: 50%;
-
-    position: absolute;
-    bottom: -5px;
-    left: -5px;
-
-    overflow: hidden;
-
-    align-items: end;
-}
-
-#sctSkills .dvSeg .dvCard .dvTit .dvBolha .dvLiqui{
-    width: 100%;
-
+#sctProjetos #dvCategorias .dvSelecionado{
     background-color: var(--prin);
 }
 
-#sctSkills .dvSeg .dvCard:nth-child(1) .dvTit .dvBolha .dvLiqui,
-#sctSkills .dvSeg .dvCard:nth-child(2) .dvTit .dvBolha .dvLiqui{
-    height: 80%;
+#sctProjetos #dvCategorias .dvSelecionado span{
+    color: var(--secun);
+    font-weight: 900;
 }
 
-#sctSkills .dvSeg .dvCard:nth-child(3) .dvTit .dvBolha .dvLiqui{
-    height: 30%;
+#sctProjetos #dvCategorias img{
+    height: 60px;
 }
 
-#sctSkills .dvSeg .dvCard:nth-child(4) .dvTit .dvBolha .dvLiqui{
-    height: 70%;
-}
-
-#sctSkills .dvSeg .dvCard:nth-child(5) .dvTit .dvBolha .dvLiqui{
-    height: 30%;
-}
-
-#sctSkills .dvSeg .dvCard:nth-child(6) .dvTit .dvBolha .dvLiqui{
-    height: 60%;
-}
-
-#sctSkills .dvSeg .dvCard:nth-child(7) .dvTit .dvBolha .dvLiqui{
-    height: 30%;
-}
-
-#sctSkills .dvSeg .dvCard:nth-child(8) .dvTit .dvBolha .dvLiqui{
-    height: 80%;
-}
-
-#sctSkills .dvSeg .dvCard .dvSkills{
-    max-height: 0;
-
-    overflow: hidden;
-
-    transition: max-height 200ms ease-out;
-}
-
-#sctSkills .dvSeg .dvCard .dvSkills .dvEspaco{
-    height: 40px;
-}
-
-#sctSkills .dvSeg .dvCard .dvSkills div{
+#sctProjetos #dvCategorias span{
     color: var(--text);
-    font-size: 1.6rem;
-
-    margin-left: 10px;
-
-    padding: 20px;
-}
-
-#sctContato{
-    padding: 0;
-}
-
-#sctContato .dvContainer{
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-}
-
-#sctContato h2{
-    height: fit-content;
-    width: fit-content;
-
-    color: var(--text);
-    font-size: 2rem;
+    font-size: 1.2rem;
     font-weight: 500;
+    font-family: Nunito;
 }
 
-#sctContato .dvSub{
-    display: flex;
-
-    height: fit-content;
-    width: fit-content;
-}
-
-#sctContato .dvSub img{
-    height: 50px;
-
-    margin-left: 30px;
-    margin-right: 30px;
-}
-
-#sctContato .dvSub img:nth-child(5){
-    background-color: var(--text);
-
-    border-radius: 50%;
-}
-
-#sctContato .dvSub #dvFundoGmail{
-    display: flex;
-
-    height: 50px;
-    width: 50px;
-
-    background-color: var(--text);
-
-    border-radius: 50%;
-
-    justify-content: center;
-    align-items: center;
-}
-
-#sctContato .dvSub #dvFundoGmail img{
-    height: 30px;
-
-    border-radius: none;
-}
-
-#sctProjetos .dvPri{
+#sctProjetos #dvSites{
     display: grid;
+
+    background-color: var(--cont);
+
+    border-radius: 12px;
+
+    padding: 30px;
 
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     grid-gap: 40px;
 }
 
-#sctProjetos .dvPri .dvSub{
-    height: 100%;
-    width: 100%;
+#sctProjetos #dvSites .dvProjeto{
+    height: fit-content;
+    width: fit-content;
 
-    background-color: var(--cont);
+    background-color: var(--secun);
 
     border-radius: 12px;
 
-    box-shadow: 0 0 20px 0px var(--cont);
+    box-shadow: 0 0 20px 0px var(--secun);
+
+    opacity: 0;
+    transform: translateY(60px);
+
+    transition: 
+        transform 500ms ease-out,
+        opacity 800ms ease;
 }
 
-#sctProjetos .dvPri .dvSub .dvImgSite{
+#sctProjetos #dvSites .dvProjeto .imgProjeto{
     height: 200px;
     width: 100%;
 
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
 
+    object-fit: cover;
+
     overflow: hidden;
 }
 
-#sctProjetos .dvPri .dvSub .dvImgSite{
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-#sctProjetos .dvPri .dvSub:nth-child(1) .dvImgSite{
-    background-image: url("../images/media/portfolio.png");
-}
-
-#sctProjetos .dvPri .dvSub:nth-child(2) .dvImgSite{
-    background-image: url("../images/media/qrCode.png");
-}
-
-#sctProjetos .dvPri .dvSub:nth-child(3) .dvImgSite{
-    background-image: url("../images/media/starbucks.png");
-}
-
-#sctProjetos .dvPri .dvSub:nth-child(4) .dvImgSite{
-    background-image: url("../images/media/login.png");
-}
-
-#sctProjetos .dvPri .dvSub:nth-child(5) .dvImgSite{
-    background-image: url("../images/media/superCalculadora.png");
-}
-
-#sctProjetos .dvPri .dvSub:nth-child(6) .dvImgSite{
-    background-image: url("../images/media/ballsFight.png");
-}
-
-#sctProjetos .dvPri .dvSub:nth-child(7) .dvImgSite{
-    background-image: url("../images/media/renanDelbue.png");
-}
-
-#sctProjetos .dvPri .dvSub h2{
+#sctProjetos  #dvSites .dvProjeto .hProjeto{
     color: var(--text);
-    font-size: 3rem;
+    font-size: 2.6rem;
+    font-family: "Rubik";
 
     text-align: center;
 
-    margin-top: 10px;
-    margin-bottom: 5px;
+    margin-top: 20px;
 }
 
-#sctProjetos .dvPri .dvSub .dvSeg{
+#sctProjetos #dvSites .dvProjeto .dvFundoTech{
     display: flex;
     
-    height: 60px;
+    height: 80px;
     width: 100%;
 
     margin-top: 20px;
@@ -965,75 +690,65 @@ header #dvHeroArea #dvHAImagens img{
     align-items: center;
 }
 
-#sctProjetos .dvPri .dvSub .dvSeg img{
-    height: 40px;
+#sctProjetos  #dvSites .dvProjeto .dvFundoTech img{
+    height: 60px;
 
     margin-left: 10px;
     margin-right: 10px;
 }
 
-#sctProjetos .dvPri .dvSub button{
-    width: 100%;
-
-    background: rgba(0, 0, 0, 0.2);
-
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-
-    transition:
-        background 250ms linear,
-        box-shadow 250ms linear;
-}
-
-#sctProjetos .dvPri .dvSub button a{
+#sctProjetos #dvSites .dvProjeto .dvFundoBut{
     display: flex;
 
+    height: fit-content;
+    width: 100%;
+}
+
+#sctProjetos #dvSites .dvProjeto .dvFundoBut .btnProjeto,
+#sctProjetos #dvSites .dvProjeto .dvFundoBut .btnRepositorio{
+    flex: 1;
+
+    display: flex;
+
+    height: 60px;
+
+    background: var(--secun);
+}
+
+#sctProjetos #dvSites .dvProjeto .dvFundoBut .btnProjeto,
+#sctProjetos #dvSites .dvProjeto .dvFundoBut .btnProjeto .aProjeto{
+    border-bottom-left-radius: 12px;
+}
+
+#sctProjetos #dvSites .dvProjeto .dvFundoBut .btnRepositorio,
+#sctProjetos #dvSites .dvProjeto .dvFundoBut .btnRepositorio .aRepositorio{
+    border-bottom-right-radius: 12px;
+}
+
+#sctProjetos #dvSites .dvProjeto .dvFundoBut .btnProjeto .aProjeto,
+#sctProjetos #dvSites .dvProjeto .dvFundoBut .btnRepositorio .aRepositorio{
     height: 100%;
     width: 100%;
 
     color: var(--text);
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 600;
+    font-family: Nunito;
+
+    transition:
+        color 250ms linear,
+        font-weight 250ms linear,
+        background 250ms linear,
+        box-shadow 250ms linear;
 
     padding: 20px;
 
     justify-content: center;
     align-items: center;
-
-    transition:
-        color 250ms linear,
-        font-weight 250ms linear;
 }
 
-#sctProjetos #dvFundoGit{
-    display: flex;
-
-    height: 60px;
-    width: 200px;
-
-    border: 2px solid var(--cont);
-    border-radius: 40px;
-
-    margin-inline: auto;
-    margin-top: 40px;
-}
-
-#sctProjetos #dvFundoGit a{
-    display: flex;
-
-    height: 100%;
-    width: 100%;
-
-    justify-content: center;
-    align-items: center;
-}
-
-#sctProjetos #dvFundoGit img{
-    height: 40px;
-
-    filter: invert(100%);
-
-    border-radius: none;
+#sctProjetos #dvSites .dvProjeto .dvFundoBut button a:hover{
+    cursor: pointer;
 }
 
 footer{
@@ -1042,24 +757,32 @@ footer{
     background-color: var(--cont);
 
     color: var(--text);
-    font-size: 1.4rem;
+    font-size: 1.6rem;
 
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-footer span{
-    margin-top: 10px;
-    margin-bottom: 10px;
+footer p{
+    margin-bottom: 40px;
 }
 
-footer span:first-child{
+footer p span{
     color: var(--prin);
     font-weight: 600;
+}
+
+footer span{
+    font-family: Nunito;
+}
+
+footer p:hover,
+footer span:hover{
+    cursor: default;    
 }
 
 #dvCreditos{
