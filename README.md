@@ -1,6 +1,6 @@
 # Portfolio
 ## Descrição
-Versão 1
+Versão 2
 
 Portifólio com descrições sobre mim, minha trajetória, minhas habilidades e links para projetos já feitos.
 O objetivo é demonstrar minhas capacidades e habilidades como desenvolvedor web.
@@ -13,4 +13,4 @@ Status: Em Progresso
 - JS
 
 ## Screenshots
-![portfolio](https://github.com/SharpShards/portfolio/assets/123817885/21c68fcd-d257-48e8-a6e0-c7559f6ddda9)
+<img width="1920" height="2839" alt="screencapture-portifolio-sharp-shards-netlify-app-2025-07-11-22_31_43" src="https://github.com/user-attachments/assets/09794087-a510-44c3-80fb-c477e97e44db" />
