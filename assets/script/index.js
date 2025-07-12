@@ -1,6 +1,6 @@
 // Funções
 function mudarImagem(){
-    let imagens = ["starbucks", "orangePoints"];
+    let imagens = ["portfolio", "starbucks", "orangePoints"];
 
     // Verifica qual imagem deve ir
     // Quando chegar na última, zera o contador e volta pra primeira.
@@ -242,22 +242,22 @@ function carregarProjetos(categoria){
     
             fundoBut.appendChild(bot);
             bot.appendChild(a);
+
+            // Cria o botão para redirecionar ao repositório
+            let but = document.createElement("button");
+                but.setAttribute("class", "btnRepositorio");
+
+            let lin = document.createElement("a");
+                lin.setAttribute("class", "aRepositorio");
+                lin.setAttribute("href", sites[categoria][site[loop]].repo);
+                lin.setAttribute("target", "_blank");
+                lin.innerText = "GitHub";
+                lin.addEventListener('mouseover', brilharBotao);
+                lin.addEventListener('mouseout', normalizarBotao);
+
+            fundoBut.appendChild(but);
+            but.appendChild(lin);
         }
-
-        // Cria o botão para redirecionar ao repositório
-        let bot = document.createElement("button");
-            bot.setAttribute("class", "btnRepositorio");
-
-        let a = document.createElement("a");
-            a.setAttribute("class", "aRepositorio");
-            a.setAttribute("href", sites[categoria][site[loop]].repo);
-            a.setAttribute("target", "_blank");
-            a.innerText = "GitHub";
-            a.addEventListener('mouseover', brilharBotao);
-            a.addEventListener('mouseout', normalizarBotao);
-
-        fundoBut.appendChild(bot);
-        bot.appendChild(a);
 
         // Animação cards
         animarCards(div);

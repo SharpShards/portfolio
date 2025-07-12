@@ -33,7 +33,7 @@ body::-webkit-scrollbar-thumb{
 /* Animações */
 @keyframes movimentoMockups{
     0%{
-        transform: translateY(100vh);
+        transform: translateY(80vh);
     }
 
     20%{
@@ -53,7 +53,7 @@ body::-webkit-scrollbar-thumb{
     }
 
     100%{
-        transform: translateY(100vh);
+        transform: translateY(80vh);
     }
 }
 
@@ -140,7 +140,7 @@ section{
 }
 
 .dvContainer{
-    width: 1140px;
+    width: 1200px;
 
     margin-inline: auto;
 }
@@ -227,6 +227,8 @@ header #dvHeroArea #dvHATexto p{
     font-size: 2rem;
     font-weight: 500;
 
+    text-align: center;
+
     margin-bottom: 80px;
 }
 
@@ -267,7 +269,7 @@ header #dvHeroArea #dvHAImagens img{
     display: grid;
 
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(4, fit-content);
+    grid-template-rows: repeat(4, auto);
     grid-gap: 20px;
     grid-template-areas:
         "dados dados foto foto trajetoria trajetoria"
@@ -450,6 +452,7 @@ header #dvHeroArea #dvHAImagens img{
 
     position: fixed;
     top: 0;
+    left: 0;
 
     opacity: 0;
     transition: opacity 500ms linear;
@@ -562,7 +565,7 @@ header #dvHeroArea #dvHAImagens img{
     display: grid;
 
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, fit-content);
+    grid-template-rows: repeat(2, auto);
     grid-gap: 20px;
 
     justify-content: center;
@@ -575,12 +578,17 @@ header #dvHeroArea #dvHAImagens img{
 
 /* Projetos */
 #sctProjetos #dvCategorias{
-    display: flex;
+    display: grid;
 
     height: fit-content;
     width: 100%;
 
     margin-bottom: 40px;
+
+    grid-template-columns: repeat(auto-fill, minmax(110px, 110px));
+    grid-gap: 20px;
+
+    justify-content: center;
 }
 
 #sctProjetos #dvCategorias div{
@@ -591,6 +599,8 @@ header #dvHeroArea #dvHAImagens img{
 
     background-color: var(--cont);
 
+    text-align: center;
+    
     border-radius: 12px;
 
     margin-right: 20px;
@@ -693,7 +703,7 @@ header #dvHeroArea #dvHAImagens img{
 }
 
 #sctProjetos  #dvSites .dvProjeto .dvFundoTech img{
-    height: 60px;
+    height: 50px;
 
     margin-left: 10px;
     margin-right: 10px;
@@ -788,7 +798,9 @@ footer span:hover{
 }
 
 #dvCreditos{
-    display: flex;
+    z-index: 3;
+
+    /* display: flex; */
     display: none;
 
     height: 100vh;
@@ -808,157 +820,391 @@ footer span:hover{
     width: 200px;
 }
 
-@media(max-width:1200px){
+@media(max-width: 1440px){
     .dvContainer{
-        width: 700px;
+        width: 80vw;
     }
 
-    #sctQuemSou .dvSeg{
-        flex-direction: column;
-    }
-
-    #sctQuemSou .dvSeg .dvSub:first-child{
-        align-items: center;
-        
-        margin-bottom: 40px;
-    }
-
-    h1::before{
-        width: 700px;
-    }
-
-    #sctTraj .dvSeg{
-        grid-template-columns: 10px 1fr 1fr;
-        grid-template-rows: auto;
-        grid-gap: 10px 20px;
+    #sctQuemSou .dvInfos{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(6, auto);
         grid-template-areas:
-        "linha traj1 traj4"
-        "linha traj2 traj5"
-        "linha traj3 traj6";
+            "dados dados foto foto"
+            "dados dados foto foto"
+            "contato contato curriculo curriculo"
+            "trajetoria trajetoria skills skills"
+            "trajetoria trajetoria skills skills"
     }
 
-    #sctTraj .dvSeg .dvCard:nth-child(2),
-    #sctTraj .dvSeg .dvCard:nth-child(4),
-    #sctTraj .dvSeg .dvCard:nth-child(7),
-    #sctTraj .dvSeg .dvCard:nth-child(9),
-    #sctTraj .dvSeg .dvCard:nth-child(11),
-    #sctTraj .dvSeg .dvCard:nth-child(13){
-        display: none;
+    #sctQuemSou .dvInfos #dvSkills img{
+        width: 60px;
     }
 
-    #sctSkills .dvSeg{
-        grid-template-columns: repeat(3, 1fr);
+    h2::before{
+        width: 60vw;
+    }
+}
+
+@media(max-width: 1200px){
+    header #dvHeroArea #dvHATexto h1 span:first-child{
+        font-size: 3rem;
     }
 
-    #sctProjetos .dvPri{
+    header #dvHeroArea #dvHATexto h1 span:last-child{
+        font-size: 6rem;
+    }
+
+    header #dvHeroArea #dvHAImagens img{
+        width: 90%;
+    }
+
+    #sctProjetos #dvSites{ 
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media(max-width:720px){
-    .dvContainer{
-        width: 300px;
+@media(max-width:950px){
+    @keyframes movimentoMockups{
+        0%{
+            transform: translateY(100vh);
+        }
 
-        overflow: hidden;
+        20%{
+            transform: translateY(60px);
+        }
+
+        40%{
+            transform: translateY(30px);
+        }
+
+        60%{
+            transform: translateY(30px);
+        }
+
+        60%{
+            transform: translateY(60px);
+        }
+
+        100%{
+            transform: translateY(100vh);
+        }
     }
 
+    header,
     section{
-        padding-top: 0;
+        padding: 40px;
     }
 
-    header img{
-        margin-bottom: 60px;
+    header #imgLogo{
+        height: 100px;
+
+        margin-bottom: 40px;
     }
 
-    header p{
-        font-size: 6rem;
-
-        line-height: 8rem;
-    }
-
-    h1{
-        line-height: 6rem;
-    }
-
-    h1::before{
-        width: 260px;
-
-        margin-top: 20px;
-        margin-bottom: 20px; 
-    }
-
-    h1::after{
-        width: 140px;
-
-        margin-top: 20px;
-    }
-
-    #sctQuemSou .dvSeg .dvSub:first-child div{
-        height: 220px;
-        width: 220px;
-    }
-
-    #sctQuemSou .dvFundo{
-        grid-template-columns: 1fr;
-        grid-gap: 20px;
-        grid-template-areas: 
-            "desc"
-            "lang"
-            "textos";
-    }
-
-    #sctTraj .dvSeg{
-        grid-template-columns: 10px 1fr;
-        grid-gap: 20px;
-        grid-template-areas:
-        "linha traj1"
-        "linha traj4"
-        "linha traj2"
-        "linha traj5"
-        "linha traj3"
-        "linha traj6";
-    }
-
-    #sctSkills .dvSeg{
-        grid-template-columns: 1fr;
-    }
-
-    #sctContato .dvContainer{
-        padding-bottom: 40px;
-
+    header #dvHeroArea{
         flex-direction: column;
     }
 
-    #sctContato h2{
-        margin-bottom: 20px;
+    header #dvHeroArea #dvHATexto h1 span:first-child{
+        font-size: 2.6rem;
     }
 
-    #sctProjetos .dvPri{
-        grid-template-columns: 1fr;
+    header #dvHeroArea #dvHATexto h1 span:last-child{
+        font-size: 5rem;
     }
 
-    #sctProjetos .dvPri .dvSub .dvImgSite{
-        height: 180px;
+    header #dvHeroArea #dvHATexto p{
+        font-size: 1.6rem;
+
+        margin-bottom: 40px;
     }
 
-    #sctProjetos .dvPri .dvSub button{
-        background-color: var(--prin) !important;
-        box-shadow: 0 0 20px 3px var(--prin) !important;
+    .button{
+        font-size: 1.6rem;
     }
 
-    #sctProjetos .dvPri .dvSub button a{    
-        font-weight: 800 !important;
+    header #dvHeroArea #dvHAImagens img{
+        height: 200px;
+    }
+
+    h2{
+        font-size: 3rem;
+    }
+
+    #sctQuemSou .dvInfos{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(6, auto);
+        grid-template-areas:
+            "foto foto foto foto"
+            "curriculo curriculo curriculo curriculo"
+            "dados dados dados contato"
+            "dados dados dados contato"
+            "trajetoria trajetoria trajetoria trajetoria"
+            "skills skills skills skills"
+    }
+
+    #sctQuemSou .dvInfos #dvFundoFoto #dvFoto{
+        height: 250px;
+        width: 250px;
+    }
+
+    #sctQuemSou .dvInfos #dvCurriculo{
+        margin-top: 40px;
+        margin-bottom: 10px;
+
+        justify-content: center;
+    }
+
+    #sctQuemSou .dvInfos #dvCurriculo span,
+    #sctQuemSou .dvInfos #dvCurriculo .btnCurriculo{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    #sctQuemSou .dvInfos #dvContato{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #sctQuemSou .dvInfos #dvSkills img{
+       margin: auto;
+    }
+
+    #sctProjetos #dvCategorias div{
+        height: 110px;
+        width: 110px;
+    }
+
+    #sctProjetos #dvCategorias img{
+        height: 50px;
+    }
+
+    #sctProjetos #dvSites .dvProjeto .imgProjeto{
+        height: 150px;
+    }
+
+    #sctProjetos  #dvSites .dvProjeto .hProjeto{
+        font-size: 2rem;
+    }
+
+    #sctProjetos  #dvSites .dvProjeto .dvFundoTech img{
+        height: 40px;
+    }
+
+    #sctProjetos #dvSites .dvProjeto .dvFundoBut .btnProjeto .aProjeto,
+    #sctProjetos #dvSites .dvProjeto .dvFundoBut .btnRepositorio .aRepositorio{
+        font-size: 1.6rem;
     }
 }
 
-@media(max-width:460px){
-    header img{
-        margin-bottom: 80px;
+@media(max-width:750px){
+    body::-webkit-scrollbar{
+        width: 0px;
     }
 
-    header p{
-        font-size: 4rem;
+    #sctProjetos #dvSites{
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+    }
 
-        line-height: 6rem;
+    #sctProjetos #dvSites .dvProjeto{
+         margin: auto;
+    }
+}
+
+@media(max-width:500px){
+    h2{
+        font-size: 2.6rem;
+    }
+
+    h2::before{
+        width: 90%;
+    }
+
+    h2::after{
+        width: 40%;
+    }
+
+    header #imgLogo{
+        height: 80px;
+    }
+
+    header #dvHeroArea #dvHATexto h1 span:first-child{
+        font-size: 2rem;
+    }
+
+    header #dvHeroArea #dvHATexto h1 span:last-child{
+        font-size: 3.8rem;
+    }
+
+    header #dvHeroArea #dvHATexto p{
+        font-size: 1.5rem;
+    }
+
+    .button{
+        font-size: 1.5rem;
+    }
+
+    #sctQuemSou .dvInfos{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(6, auto);
+        grid-template-areas:
+            "foto"
+            "curriculo"
+            "dados"
+            "contato"
+            "trajetoria"
+            "skills"
+    }
+
+    #sctQuemSou .dvInfos #dvFundoFoto #dvFoto{
+        height: 200px;
+        width: 200px;
+    }
+
+    #sctQuemSou .dvInfos #dvContato{
+        flex-direction: row;
+    }
+
+    #sctQuemSou .dvInfos #dvTrajetoria #dvFormacao #pFormacao{
+        font-size: 1.8rem;
+    }
+
+    #sctQuemSou .dvInfos #dvTrajetoria #dvFormacao p{
+        font-size: 1.4rem;
+    }
+
+    #sctQuemSou .dvInfos #dvSkills img{
+        height: 50px;
+    }
+
+    #sctProjetos #dvCategorias div{
+        height: 110px;
+        width: 110px;
+    }
+
+    #sctProjetos #dvCategorias img{
+        height: 50px;
+    }
+
+    #sctProjetos #dvSites .dvProjeto .imgProjeto{
+        height: 150px;
+    }
+
+    #sctProjetos  #dvSites .dvProjeto .hProjeto{
+        font-size: 2rem;
+    }
+
+    #sctProjetos  #dvSites .dvProjeto .dvFundoTech img{
+        height: 40px;
+    }
+
+    #sctProjetos #dvSites .dvProjeto .dvFundoBut .btnProjeto .aProjeto,
+    #sctProjetos #dvSites .dvProjeto .dvFundoBut .btnRepositorio .aRepositorio{
+        font-size: 1.6rem;
+    }
+}
+
+@media(max-width:500px){
+    .dvContainer{
+        width: 100%;
+    }
+
+    h2{
+        font-size: 2.6rem;
+
+        margin-bottom: 40px;
+    }
+
+    h2::before{
+        width: 90%;
+    }
+
+    h2::after{
+        width: 40%;
+    }
+
+    header,
+    section{
+        padding: 40px 20px;
+    }
+
+    header #imgLogo{
+        height: 80px;
+    }
+
+    header #dvHeroArea #dvHATexto h1 span:first-child{
+        font-size: 2rem;
+    }
+
+    header #dvHeroArea #dvHATexto h1 span:last-child{
+        font-size: 3.8rem;
+    }
+
+    header #dvHeroArea #dvHATexto p{
+        font-size: 1.5rem;
+    }
+
+    .button{
+        font-size: 1.5rem;
+    }
+
+    #sctQuemSou .dvInfos{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, auto);
+        grid-template-areas:
+            "foto"
+            "curriculo"
+            "dados"
+            "contato"
+            "trajetoria"
+            "skills"
+    }
+
+    #sctQuemSou .dvInfos .dvCard{
+        max-width: 500px;
+        min-width: 240px;
+
+        padding: 20px;
+    }
+
+    #sctQuemSou .dvInfos #dvFundoFoto #dvFoto{
+        height: 200px;
+        width: 200px;
+    }
+
+    #sctQuemSou .dvInfos #dvCurriculo span{
+        height: 50px;
+    }
+
+    #sctQuemSou .dvInfos #dvCurriculo .btnCurriculo{
+        height: 50px;
+        width: 50px;
+    }
+
+    #sctQuemSou .dvInfos #dvDados ul li{
+        font-size: 1.4rem;
+    }
+
+    #sctQuemSou .dvInfos #dvContato{
+        flex-direction: row;
+    }
+
+    #sctQuemSou .dvInfos #dvContato div{
+        height: 50px;
+        width: 50px;
+    }
+
+    #sctQuemSou .dvInfos #dvTrajetoria #dvBolhas div{
+        height: 30px;
+        width: 30px;
+    }
+
+    #sctQuemSou .dvInfos #dvSkills img{
+        max-height: 40px;
+        min-height: 30px;
+
+        max-width: 40px;
+        min-width: 30px;
     }
 }
