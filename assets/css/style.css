@@ -1207,4 +1207,14 @@ footer span:hover{
         max-width: 40px;
         min-width: 30px;
     }
+
+    #sctProjetos #dvSites .dvProjeto .dvFundoBut .btnProjeto .aProjeto,
+    #sctProjetos #dvSites .dvProjeto .dvFundoBut .btnRepositorio .aRepositorio{
+        background-color: var(--prin);
+        
+        color: var(--secun);
+        font-weight: 900;
+        
+        box-shadow: 0 0 20px 3px var(--prin);
+    }
 }

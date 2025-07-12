@@ -2,6 +2,8 @@
 function mudarImagem(){
     let imagens = ["portfolio", "starbucks", "orangePoints"];
 
+    heroImage.setAttribute("src", `assets/images/mockups/${imagens[animaHeroImage]}.svg`);
+
     // Verifica qual imagem deve ir
     // Quando chegar na última, zera o contador e volta pra primeira.
     if(animaHeroImage == (imagens.length - 1)){
@@ -9,8 +11,6 @@ function mudarImagem(){
     }else{
         animaHeroImage += 1
     }
-    
-    heroImage.setAttribute("src", `assets/images/mockups/${imagens[animaHeroImage]}.svg`);
 }
 
 function moverPortfolio(){
@@ -320,6 +320,7 @@ const categorias = document.querySelectorAll("#sctProjetos #dvCategorias div")
 
 // Main
 //// Animação Hero Image
+mudarImagem();
 setInterval(mudarImagem, 4000);
 
 //// Carregar primeira categoria em Projetos
