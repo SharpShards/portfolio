@@ -1,6 +1,6 @@
 // Funções
 function mudarImagem(){
-    let imagens = ["portfolio", "starbucks", "orangePoints"];
+    let imagens = ["portfolio", "starbucks", "orangePoints", "superCalculadora"];
 
     heroImage.setAttribute("src", `assets/images/mockups/${imagens[animaHeroImage]}.svg`);
 
